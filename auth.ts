@@ -8,8 +8,27 @@ if (!process.env.AUTH_SPOTIFY_ID || !process.env.AUTH_SPOTIFY_SECRET) {
   throw Error("SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET is missing");
 }
 
+const scopes = [
+  "user-read-recently-played",
+  "user-read-playback-state",
+  "user-top-read",
+  "user-modify-playback-state",
+  "user-read-currently-playing",
+  "user-follow-read",
+  "playlist-read-private",
+  "user-read-email",
+  "user-read-private",
+  "user-library-read",
+  "playlist-read-collaborative",
+];
+
 export const config = {
-  providers: [Spotify],
+  providers: [
+    Spotify({
+      authorization:
+        "https://accounts.spotify.com/authorize?scope=user-read-currently-playing,user-read-recently-played,user-top-read,user-read-email",
+    }),
+  ],
   callbacks: {
     authorized({ request, auth }) {
       const { pathname } = request.nextUrl;

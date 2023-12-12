@@ -5,12 +5,7 @@
   vertical-align: middle;
   overflow: hidden;
   user-select: none;
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
   background-color: black;
-  margin-bottom: 2rem;
-  margin-right: 2rem;
 }
 
 .AvatarImage {
@@ -27,7 +22,7 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  color: white;
+  color: gray;
   font-size: 15px;
   line-height: 1;
   font-weight: 500;

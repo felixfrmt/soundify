@@ -2,6 +2,7 @@ import { SignIn, SignOut } from "@/components/auth-button";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 import Profile from "@/components/profile";
+import TopItems from "@/components/top-items";
 
 export default async function Home() {
   const session = await auth();
@@ -18,6 +19,7 @@ export default async function Home() {
         <>
           <SessionProvider session={session} refetchInterval={5 * 60}>
             <Profile session={session} />
+            <TopItems session={session} />
           </SessionProvider>
           <SignOut />
         </>

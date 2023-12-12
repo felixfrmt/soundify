@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import AvatarProfile from "./ui/avatar-profile"; // Assurez-vous que le chemin d'importation est correct
+import Image from "./ui/images"; // Assurez-vous que le chemin d'importation est correct
 
 import type { Session } from "next-auth";
 
@@ -56,10 +56,20 @@ export default function Profile({ session }: { session: Session }) {
     <>
       {response ? (
         <>
-          <div className="flex">
-            <AvatarProfile path={response.images[1].url} />
+          <div className="flex gap-12 mb-16">
+            <div className="flex">
+              <Image
+                url={response.images[1].url}
+                alt="profile's image"
+                fallbackUrl="./default-profile.png"
+                className="rounded-full"
+                width={220}
+                height={220}
+              />
+            </div>
+
             <div className="w-3/4">
-              <p className="text-4xl mt-8 mb-2">
+              <p className="text-4xl font-semibold mt-8 mb-2">
                 Welcome, {response.display_name} !
               </p>
               <p className="text-sm text-gray-600">
