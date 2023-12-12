@@ -1,6 +1,10 @@
 import { signIn, signOut } from "@/auth";
 
-export function SignIn({ children }: { children?: React.ReactNode }) {
+type ChildrenProps = {
+  children?: React.ReactNode;
+};
+
+export function SignIn({ children }: ChildrenProps) {
   return (
     <>
       {children}
@@ -16,7 +20,7 @@ export function SignIn({ children }: { children?: React.ReactNode }) {
   );
 }
 
-export function SignOut({ children }: { children?: React.ReactNode }) {
+export function SignOut({ children }: ChildrenProps) {
   return (
     <>
       {children}
