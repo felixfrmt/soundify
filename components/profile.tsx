@@ -63,7 +63,7 @@ export default function Profile({ session }: { session: Session }) {
                 Welcome, {response.display_name} !
               </p>
               <p className="text-sm text-gray-600">
-                + {response.followers.total} followers
+                {response.followers.total} followers
               </p>
             </div>
           </div>

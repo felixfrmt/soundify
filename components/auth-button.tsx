@@ -1,4 +1,4 @@
-import { signIn, signOut } from "@/app/api/auth/[...nextauth]/route";
+import { signIn, signOut } from "@/auth";
 
 export function SignIn({ children }: { children?: React.ReactNode }) {
   return (

@@ -9,16 +9,13 @@ export default function AvatarProfile({ path }: { path: string }) {
         alt="Image du profil"
         className={styles.AvatarImage}
       />
-      <Avatar.Fallback
-        className={styles.AvatarFallback}
-        children={
-          <Avatar.Image
-            src="/default_profile.png"
-            alt="Image de profil par défaut"
-            className={styles.AvatarImage}
-          />
-        }
-      />
+      <Avatar.Fallback className={styles.AvatarFallback}>
+        <Avatar.Image
+          src="/default_profile.png"
+          alt="Image de profil par défaut"
+          className={styles.AvatarImage}
+        />
+      </Avatar.Fallback>
     </Avatar.Root>
   );
 }

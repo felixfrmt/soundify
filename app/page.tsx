@@ -1,6 +1,6 @@
 import { SignIn, SignOut } from "@/components/auth-button";
 import { SessionProvider } from "next-auth/react";
-import { auth } from "@/app/api/auth/[...nextauth]/route";
+import { auth } from "@/auth";
 import Profile from "@/components/profile";
 
 export default async function Home() {
@@ -22,7 +22,7 @@ export default async function Home() {
           <SignOut />
         </>
       ) : (
-        <SignIn children={message} />
+        <SignIn>{message}</SignIn>
       )}
     </main>
   );
